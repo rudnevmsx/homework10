@@ -10,9 +10,10 @@ public class Main {
         phoneBook.add("Петров", "890-12-34");
         phoneBook.add("Сидоров", "456-78-90");
         phoneBook.add("Козлов", "777-77-77");
+        phoneBook.add("Козлов", "177-77-77");
         phoneBook.add("Новикова", "555-55-55");
 
-        System.out.println(phoneBook.find("Козлова"));
+        System.out.println(phoneBook.find("Козлов"));
         System.out.println(phoneBook.containsPhoneNumber("1777-77-77"));
     }
 }

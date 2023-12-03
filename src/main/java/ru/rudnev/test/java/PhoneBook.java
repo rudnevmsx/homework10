@@ -21,18 +21,10 @@ public class PhoneBook {
     }
 
     public List<String> find(String name){
-        if (phoneBook.containsKey(name)){
-            return phoneBook.get(name);
-        }
-        return Collections.emptyList();
+        return phoneBook.getOrDefault(name, new ArrayList<>());
     }
 
     public boolean containsPhoneNumber(String phoneNumber){
-        for (List<String> phoneNumbers : phoneBook.values()){
-            if (phoneNumbers.contains(phoneNumber)){
-                return true;
-            }
-        }
-        return false;
+        return phoneBook.values().stream().anyMatch(numbers -> numbers.contains(phoneNumber));
     }
 }
